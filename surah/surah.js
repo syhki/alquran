@@ -10,7 +10,6 @@ function getURL(e) {
 }
 let id = getURL('id');
 let url = `https://equran.id/api/surat/${id}`;
-let title = document.getElementsByClassName('title')[0];
 let wrap = document.getElementsByClassName('ayat')[0];
 async function ayat() {
   let res = await fetch(url);
@@ -30,7 +29,6 @@ async function ayat() {
     `;
   });
   document.title = data.nama_latin;
-  title.innerHTML = judul;
   wrap.innerHTML = konten;
   console.info(data);
 }
